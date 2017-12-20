@@ -18,8 +18,8 @@ public class PedidoResource {
 	
 	@RequestMapping(value = "/{id}", method=RequestMethod.GET)
 	//ResponseEntity = tipo especial que encapsula, armazenando varias informacoes de uma resposta Http tipo Rest
-	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Pedido obj = service.buscar(id);
+	public ResponseEntity<Pedido> find(@PathVariable Integer id) {
+		Pedido obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
 
 	}
